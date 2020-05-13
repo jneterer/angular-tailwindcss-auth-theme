@@ -1,6 +1,9 @@
-@import './auth.scss';
-@import './app.scss';
 @import './core/create-account.scss';
 @import './core/forgot-password.scss';
 @import './core/login.scss';
-@import './link.scss';
+@import './profile/account-info.scss';
+@import './profile/change-password.scss';
+@import './profile/profile.scss';
+@import './shared/auth.scss';
+@import './shared/link.scss';
+@import './app.scss';

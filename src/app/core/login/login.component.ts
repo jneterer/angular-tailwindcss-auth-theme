@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Router } from '@angular/router';
 import { FormTemplate } from '../../shared/templates/form/form-template.component';
 
 @Component({
@@ -9,7 +10,8 @@ import { FormTemplate } from '../../shared/templates/form/form-template.componen
 export class LoginComponent extends FormTemplate implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private router: Router,
+              private formBuilder: FormBuilder) {
     super();
   }
 
@@ -27,6 +29,9 @@ export class LoginComponent extends FormTemplate implements OnInit {
    */
   login(event: any): void {
     this.formSubmitted = true;
+    if (this.loginForm.valid) {
+      this.router.navigate(['/profile']);
+    }
   }
 
 }

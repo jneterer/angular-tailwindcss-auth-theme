@@ -17,7 +17,6 @@ label {
   }
 }
 .btn {
-  @include gradient();
   @include shadowOnFocus();
   @apply px-4;
   @apply py-2;
@@ -26,8 +25,17 @@ label {
   @apply transition;
   @apply ease-in-out;
   @apply duration-200;
-  &:hover {
+  &:disabled {
+    opacity: .5;
+  }
+  &:hover:enabled {
     @apply shadow-xl
+  }
+  &.gradient {
+    @apply bg-gradient-r-primary-gradient;
+  }
+  &.striped {
+    @apply bg-gradient-n45-primary-striped-sm;
   }
 }
 .error {

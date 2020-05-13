@@ -15,9 +15,29 @@ module.exports = {
     extend: {
       colors: {
         primary: '#FF0800',
+        'primary-gradient': ['rgba(255,8,0,1)', 'rgba(255,8,0,0.788953081232493) 39%', 'rgba(255,8,0,0.6516981792717087)'],
+        'primary-striped': ['rgba(255,8,0,1)', 'rgba(255,8,0,1) 10px', 'rgba(255,8,0,0.6516981792717087) 10px', 'rgba(255,8,0,0.6516981792717087) 20px']
       },
+    },
+    linearGradientDirections: {
+      't': 'to top',
+      'tr': 'to top right',
+      'r': 'to right',
+      'br': 'to bottom right',
+      'b': 'to bottom',
+      'bl': 'to bottom left',
+      'l': 'to left',
+      'tl': 'to top left',
+      'n45': '-45deg'
+    },
+    linearGradientColors: theme => theme('colors'),
+    repeatingLinearGradientColors: theme => theme('colors'),
+    repeatingLinearGradientLengths: {
+      'sm': '20px'
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('tailwindcss-gradients')
+  ],
 }

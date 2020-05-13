@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'create-account', component: CreateAccountComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'profile', loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule) },
   { path: '**', redirectTo: '' }
 ];
 

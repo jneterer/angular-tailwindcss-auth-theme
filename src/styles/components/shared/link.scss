@@ -23,7 +23,7 @@ a {
     @apply transition-all;
     @apply ease-in-out;
     @apply duration-300;
-    @include gradient();
+    @apply bg-gradient-r-primary-gradient;
     // using the tailwindcss hidden class does not work.
     visibility: hidden;
   }

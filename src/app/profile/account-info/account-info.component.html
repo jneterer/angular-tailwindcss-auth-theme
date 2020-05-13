@@ -1,0 +1,38 @@
+<h2 class="text-2xl mb-4">Account Information</h2>
+<form [formGroup]="accountInfoForm" (ngSubmit)="updateAccountInfo($event)">
+  <div class="mb-5">
+    <label for="firstName">
+      First Name
+    </label>
+    <div class="input-wrapper">
+      <input id="firstName" formControlName="firstName" type="text" placeholder="First Name">
+    </div>
+  </div>
+  <div class="mb-5">
+    <label for="lastName">
+      Last Name
+    </label>
+    <div class="input-wrapper">
+      <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
+    </div>
+  </div>
+  <div class="mb-8">
+    <label for="email">
+      Email *
+    </label>
+    <div class="input-wrapper">
+      <input id="email" formControlName="email" type="email" placeholder="Email" required>
+    </div>
+    <p class="error" [class.active]="errorIsActive(accountInfoForm.get('email'))">
+      {{ getErrorMessage(accountInfoForm.get('email')) }}
+    </p>
+  </div>
+  <div class="flex items-center justify-between mb-6">
+    <button class="btn gradient w-full" type="submit">
+      Update Account Info
+    </button>
+  </div>
+  <div class="text-center mb-6">
+    <p *ngIf="accountInfoUpdated" class="success">Your account information was successfully updated!</p>
+  </div>
+</form>

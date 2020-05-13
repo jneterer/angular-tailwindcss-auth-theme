@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { LinkComponent } from './components/link/link.component';
 import { ViewHideComponent } from './icons/view-hide/view-hide.component';
@@ -13,7 +14,9 @@ import { ViewShowComponent } from './icons/view-show/view-show.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     ViewHideComponent,
@@ -21,6 +24,8 @@ import { ViewShowComponent } from './icons/view-show/view-show.component';
   ],
   exports: [
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     LinkComponent,
     ViewHideComponent,
     ViewShowComponent
