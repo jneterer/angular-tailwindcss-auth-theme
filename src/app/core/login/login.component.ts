@@ -8,8 +8,6 @@ import { FormTemplate } from '../../shared/templates/form/form-template.componen
 })
 export class LoginComponent extends FormTemplate implements OnInit {
   loginForm: FormGroup;
-  formSubmitted: boolean = false;
-  showPassword: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
     super();

@@ -1,5 +1,6 @@
-@import './app.component.scss';
 @import './auth.scss';
-@import './create-account.component.scss';
+@import './app.scss';
+@import './core/create-account.scss';
+@import './core/forgot-password.scss';
+@import './core/login.scss';
 @import './link.scss';
-@import './login.component.scss';

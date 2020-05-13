@@ -17,14 +17,14 @@
       <label for="password">
         Password *
       </label>
-      <div class="flex input-wrapper">
+      <div class="input-wrapper flex">
         <input id="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="******************" required>
         <div class="cursor-pointer" (click)="showPassword = !showPassword">
           <ng-container *ngIf="showPassword; else hidePassword">
-            <app-view-show></app-view-show>
+            <app-view-hide></app-view-hide>
           </ng-container>
           <ng-template #hidePassword>
-            <app-view-hide></app-view-hide>
+            <app-view-show></app-view-show>
           </ng-template>
         </div>
       </div>

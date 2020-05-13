@@ -1,7 +1,10 @@
 import { AbstractControl } from '@angular/forms';
 
 export class FormTemplate {
+  // The submitted state of the form.
   formSubmitted: boolean = false;
+  // Toggles whether the password is shown or not given a password form control.
+  showPassword: boolean = false;
   // You can override these default messages in the component that extends this template.
   requiredMessage: string = 'This field is required.';
   emailMessage: string = 'Please provide a valid email address.';

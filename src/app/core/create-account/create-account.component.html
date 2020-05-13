@@ -46,8 +46,16 @@
       <label for="password">
         Password *
       </label>
-      <div class="input-wrapper">
-        <input id="password" formControlName="password" type="password" placeholder="Password" required>
+      <div class="input-wrapper flex">
+        <input id="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="Password" required>
+        <div class="cursor-pointer" (click)="showPassword = !showPassword">
+          <ng-container *ngIf="showPassword; else hidePassword">
+            <app-view-hide></app-view-hide>
+          </ng-container>
+          <ng-template #hidePassword>
+            <app-view-show></app-view-show>
+          </ng-template>
+        </div>
       </div>
       <p class="error" [class.active]="errorIsActive(createAccountForm.get('password'))">
         {{ getErrorMessage(createAccountForm.get('password')) }}

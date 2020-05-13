@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { FormTemplate } from '../../shared/templates/form/form-template.component';
 import { MustMatch } from '../../shared/validators/must-match.validator';
 
@@ -9,9 +10,9 @@ import { MustMatch } from '../../shared/validators/must-match.validator';
 })
 export class CreateAccountComponent extends FormTemplate implements OnInit {
   createAccountForm: FormGroup;
-  formSubmitted: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private router: Router,
+              private formBuilder: FormBuilder) {
     super();
   }
 
@@ -32,8 +33,11 @@ export class CreateAccountComponent extends FormTemplate implements OnInit {
    * Create account event.
    * @param {any} event 
    */
-  createAccount(event: any) {
+  createAccount(event: any): void {
     this.formSubmitted = true;
+    if (this.createAccountForm.valid) {
+      this.router.navigate(['/login']);
+    }
   }
 
 }
