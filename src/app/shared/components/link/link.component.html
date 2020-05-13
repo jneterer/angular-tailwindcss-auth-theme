@@ -1,0 +1,6 @@
+<ng-container *ngIf="internal; else external">
+  <a [routerLink]="url">{{ text }}</a>
+</ng-container>
+<ng-template #external>
+  <a [href]="url" [target]="target">{{ text }}</a>
+</ng-template>

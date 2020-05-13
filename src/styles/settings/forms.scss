@@ -1,0 +1,45 @@
+label {
+  @apply block;
+  @apply text-sm;
+  @apply font-bold;
+  @apply mb-2;
+}
+.input-wrapper {
+  @apply appearance-none;
+  @apply bg-gray-100;
+  @apply rounded;
+  @apply py-2;
+  @apply px-3;
+  input {
+    color: theme('colors.gray.900');
+    @apply w-full;
+    @apply bg-gray-100;
+  }
+}
+.btn {
+  @include gradient();
+  @include shadowOnFocus();
+  @apply px-4;
+  @apply py-2;
+  @apply rounded;
+  @apply text-white;
+  @apply transition;
+  @apply ease-in-out;
+  @apply duration-200;
+  &:hover {
+    @apply shadow-xl
+  }
+}
+.error {
+  @apply mt-2;
+  color: theme('colors.primary');
+  @apply opacity-0;
+  @apply transition;
+  @apply ease-linear;
+  @apply duration-300;
+  @apply text-xs;
+  @apply italic;
+  &.active {
+    @apply opacity-100;
+  }
+}

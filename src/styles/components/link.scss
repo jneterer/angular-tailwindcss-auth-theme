@@ -1,0 +1,30 @@
+a {
+  @apply inline-block;
+  @apply align-baseline;
+  @apply font-bold;
+  @apply text-sm;
+  @apply relative;
+  @apply rounded;
+  @include shadowOnFocus();
+  &:hover {
+    @apply cursor-pointer;
+    &:before {
+      @apply visible;
+      @apply w-full;
+    }
+  }
+  &:before {
+    content: "";
+    @apply absolute;
+    @apply w-0;
+    @apply h-px;
+    @apply bottom-0;
+    @apply left-0;
+    @apply transition-all;
+    @apply ease-in-out;
+    @apply duration-300;
+    @include gradient();
+    // using the tailwindcss hidden class does not work.
+    visibility: hidden;
+  }
+}

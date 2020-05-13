@@ -1,0 +1,21 @@
+.auth-container {
+  @apply w-full;
+  @apply max-w-md;
+  @apply mx-auto;
+  @apply my-12;
+  @apply px-8;
+  @apply py-6;
+  @apply flex;
+  @apply flex-col;
+  @screen sm {
+    @apply w-8/12;
+    @apply shadow-md;
+    @apply rounded;
+  }
+  @screen md {
+    @apply w-1/2;
+  }
+  @screen xl {
+    @apply w-1/3;
+  }
+}

@@ -1,0 +1,11 @@
+* {
+  color: theme('colors.blue.900');
+  &:focus {
+    outline: 0 !important;
+  }
+}
+svg {
+  fill: theme('colors.blue.900');
+  height: 25px;
+  width: 25px;
+}

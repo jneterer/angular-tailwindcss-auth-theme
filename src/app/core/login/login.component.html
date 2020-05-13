@@ -1,0 +1,45 @@
+<div class="auth-container">
+  <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+    <h1 class="text-3xl text-center mb-2">Login</h1>
+    <p class="text-center mb-8 flex justify-center">
+      Angular and TailwincdCSS Auth Theme
+    </p>
+    <div class="mb-4">
+      <label for="username">
+        Username *
+      </label>
+      <div class="input-wrapper">
+        <input id="username" formControlName="username" type="text" placeholder="Username" required>
+      </div>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('username'))">Please provide your username.</p>
+    </div>
+    <div class="mb-2">
+      <label for="password">
+        Password *
+      </label>
+      <div class="flex input-wrapper">
+        <input id="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="******************" required>
+        <div class="cursor-pointer" (click)="showPassword = !showPassword">
+          <ng-container *ngIf="showPassword; else hidePassword">
+            <app-view-show></app-view-show>
+          </ng-container>
+          <ng-template #hidePassword>
+            <app-view-hide></app-view-hide>
+          </ng-template>
+        </div>
+      </div>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('password'))">Please provide your password.</p>
+    </div>
+    <div class="mb-6">
+      <app-link [text]="'Forgot Password?'" [url]="'/forgot-password'"></app-link>
+    </div>
+    <div class="flex items-center justify-between">
+      <button class="btn w-full mb-6" type="submit">
+        Sign In
+      </button>
+    </div>
+  </form>
+  <div class="text-center">
+    <app-link [text]="'Don\'t have an account? Create one.'" [url]="'/create-account'"></app-link>
+  </div>
+</div>
