@@ -4,16 +4,16 @@
     <p class="text-center mb-8 flex justify-center">
       Angular and TailwincdCSS Auth Theme
     </p>
-    <div class="mb-4">
+    <div class="mb-5">
       <label for="username">
         Username *
       </label>
       <div class="input-wrapper">
         <input id="username" formControlName="username" type="text" placeholder="Username" required>
       </div>
-      <p class="error" [class.active]="errorIsActive(loginForm.get('username'))">Please provide your username.</p>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('username'))">This field is required.</p>
     </div>
-    <div class="mb-2">
+    <div class="mb-10">
       <label for="password">
         Password *
       </label>
@@ -28,18 +28,18 @@
           </ng-template>
         </div>
       </div>
-      <p class="error" [class.active]="errorIsActive(loginForm.get('password'))">Please provide your password.</p>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('password'))">This field is required.</p>
     </div>
     <div class="mb-6">
       <app-link [text]="'Forgot Password?'" [url]="'/forgot-password'"></app-link>
     </div>
-    <div class="flex items-center justify-between">
-      <button class="btn w-full mb-6" type="submit">
+    <div class="flex items-center justify-between mb-6">
+      <button class="btn w-full" type="submit">
         Sign In
       </button>
     </div>
   </form>
   <div class="text-center">
-    <app-link [text]="'Don\'t have an account? Create one.'" [url]="'/create-account'"></app-link>
+    <app-link [text]="'Don\'t have an account? Create one here.'" [url]="'/create-account'"></app-link>
   </div>
 </div>

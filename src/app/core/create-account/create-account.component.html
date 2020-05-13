@@ -1,0 +1,76 @@
+<div class="auth-container">
+  <form [formGroup]="createAccountForm" (ngSubmit)="createAccount($event)">
+    <h1 class="text-3xl text-center mb-2">Create Account</h1>
+    <p class="text-center mb-8 flex justify-center">
+      Angular and TailwincdCSS Auth Theme
+    </p>
+    <div class="mb-5">
+      <label for="firstName">
+        First Name
+      </label>
+      <div class="input-wrapper">
+        <input id="firstName" formControlName="firstName" type="text" placeholder="First Name">
+      </div>
+    </div>
+    <div class="mb-5">
+      <label for="lastName">
+        Last Name
+      </label>
+      <div class="input-wrapper">
+        <input id="lastName" formControlName="lastName" type="text" placeholder="Last Name">
+      </div>
+    </div>
+    <div class="mb-5">
+      <label for="username">
+        Username *
+      </label>
+      <div class="input-wrapper">
+        <input id="username" formControlName="username" type="text" placeholder="Username" required>
+      </div>
+      <p class="error" [class.active]="errorIsActive(createAccountForm.get('username'))">
+        {{ getErrorMessage(createAccountForm.get('username')) }}
+      </p>
+    </div>
+    <div class="mb-5">
+      <label for="email">
+        Email *
+      </label>
+      <div class="input-wrapper">
+        <input id="email" formControlName="email" type="email" placeholder="Email" required>
+      </div>
+      <p class="error" [class.active]="errorIsActive(createAccountForm.get('email'))">
+        {{ getErrorMessage(createAccountForm.get('email')) }}
+      </p>
+    </div>
+    <div class="mb-5">
+      <label for="password">
+        Password *
+      </label>
+      <div class="input-wrapper">
+        <input id="password" formControlName="password" type="password" placeholder="Password" required>
+      </div>
+      <p class="error" [class.active]="errorIsActive(createAccountForm.get('password'))">
+        {{ getErrorMessage(createAccountForm.get('password')) }}
+      </p>
+    </div>
+    <div class="mb-10">
+      <label for="confirmPassword">
+        Confirm Password *
+      </label>
+      <div class="input-wrapper">
+        <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirm Password" required>
+      </div>
+      <p class="error" [class.active]="errorIsActive(createAccountForm.get('confirmPassword'))">
+        {{ getErrorMessage(createAccountForm.get('confirmPassword')) }}
+      </p>
+    </div>
+    <div class="flex items-center justify-between mb-6">
+      <button class="btn w-full" type="submit">
+        Create Account
+      </button>
+    </div>
+    <div class="text-center">
+      <app-link [text]="'Already have an account? Log in!'" [url]="'/login'"></app-link>
+    </div>
+  </form>
+</div>

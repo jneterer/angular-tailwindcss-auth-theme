@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormTemplate } from '../../shared/templates/form/form-template.component';
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.component.html'
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends FormTemplate implements OnInit {
   loginForm: FormGroup;
   formSubmitted: boolean = false;
   showPassword: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder) {
+    super();
+  }
 
   ngOnInit(): void {
     // Build the login form
@@ -19,15 +21,6 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
-  }
-
-  /**
-   * Determines if there are errors present on a given form control.
-   * @param {AbstractControl} formControl 
-   * @returns {boolean}
-   */
-  errorIsActive(formControl: AbstractControl): boolean {
-    return (formControl.touched || this.formSubmitted) && Object.keys(Object.assign({}, formControl.errors)).length > 0;
   }
 
   /**
