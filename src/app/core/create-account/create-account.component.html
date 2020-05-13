@@ -72,11 +72,9 @@
         {{ getErrorMessage(createAccountForm.get('confirmPassword')) }}
       </p>
     </div>
-    <div class="flex items-center justify-between mb-6">
-      <button class="btn gradient w-full" type="submit">
-        Create Account
-      </button>
-    </div>
+    <button class="btn gradient w-full mb-6" type="submit">
+      Create Account
+    </button>
     <div class="text-center">
       <app-link [text]="'Already have an account? Log in!'" [url]="'/login'"></app-link>
     </div>

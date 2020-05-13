@@ -27,12 +27,8 @@
       {{ getErrorMessage(accountInfoForm.get('email')) }}
     </p>
   </div>
-  <div class="flex items-center justify-between mb-6">
-    <button class="btn gradient w-full" type="submit">
-      Update Account Info
-    </button>
-  </div>
-  <div class="text-center mb-6">
-    <p *ngIf="accountInfoUpdated" class="success">Your account information was successfully updated!</p>
-  </div>
+  <button class="btn gradient w-full mb-6" type="submit">
+    Update Account Info
+  </button>
+  <p *ngIf="accountInfoUpdated" class="success text-center mb-6">Your account information was successfully updated!</p>
 </form>
