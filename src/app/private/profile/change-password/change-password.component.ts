@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormTemplate } from '../../shared/templates/form/form-template.component';
-import { MustMatch } from '../../shared/validators/must-match.validator';
+import { FormTemplate } from '../../../shared/templates/form/form-template.component';
+import { MustMatch } from '../../../shared/validators/must-match.validator';
 
 @Component({
   selector: 'app-change-password',

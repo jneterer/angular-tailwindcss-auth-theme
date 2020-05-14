@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IUser } from '../../contracts/user/iuser';
-import { FormTemplate } from '../../shared/templates/form/form-template.component';
+import { IUser } from '../../../contracts/user/iuser';
+import { FormTemplate } from '../../../shared/templates/form/form-template.component';
 
 @Component({
   selector: 'app-account-info',

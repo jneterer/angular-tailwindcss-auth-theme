@@ -30,7 +30,7 @@ export class LoginComponent extends FormTemplate implements OnInit {
   login(event: any): void {
     this.formSubmitted = true;
     if (this.loginForm.valid) {
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/app/profile']);
     }
   }
 
