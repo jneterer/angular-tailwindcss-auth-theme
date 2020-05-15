@@ -26,6 +26,11 @@
     @apply block; 
     @apply p-4;
     @apply font-bold;
+    &.active {
+      @apply bg-gray-200;
+      @apply border-r-4;
+      @apply border-primary;
+    }
     &:hover {
       @apply bg-gray-300;
       @apply border-r-4;

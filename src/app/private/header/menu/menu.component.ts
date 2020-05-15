@@ -15,6 +15,8 @@ export class MenuComponent implements OnInit {
   @Input() origin: 'top' | 'top-right' | 'top-left' = 'top';
   // The menu items.
   @Input() menuItems: IMenuItem[];
+  // The current url that helps determine if a menu item needs highlighted if we are on its page.
+  @Input() currentUrl: string;
   // Event emitted to collapse all menus if a menu item is clicked.
   @Output() collapseMenu: EventEmitter<any> = new EventEmitter<any>();
 

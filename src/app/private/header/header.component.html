@@ -6,13 +6,13 @@
     <zond-icon icon="menu" [color]="'white'"></zond-icon>
   </button>
   <nav class="nav-menu-container" [class.open]="navExpanded">
-    <a class="btn flat mr-3" routerLink="/app/about" (click)="collapseMenus()">
+    <a class="btn flat mr-3" [class.bg-gray-200]="currentUrl === '/app/about'" routerLink="/app/about" (click)="collapseMenus()">
       About
     </a>
     <button class="btn gradient" (click)="accountMenuExpanded = !accountMenuExpanded">
       <zond-icon icon="user-solid-circle" [color]="'white'"></zond-icon>
       <span class="ml-2 text-white">Account</span>
     </button>
-    <app-menu [expanded]="accountMenuExpanded" [menuItems]="accountMenuItems" [right]="24" [origin]="'top-right'" (collapseMenu)="collapseMenus()"></app-menu>
+    <app-menu [expanded]="accountMenuExpanded" [menuItems]="accountMenuItems" origin="top-right" (collapseMenu)="collapseMenus()" [currentUrl]="currentUrl"></app-menu>
   </nav>
 </header>
