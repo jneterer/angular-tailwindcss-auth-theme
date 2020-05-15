@@ -4,7 +4,7 @@
 
 Start building an authentication-based application with this **Open Source** Angular and TailwindCSS Authentication Theme. You don't have to worry about any boiler-plate styling, everything is already built for you! It is ready to go so you can start integrating your authentication service.
 
-Keep reading for more information about how to get the best out of this awesome theme! Almost all development was done live on my Twitch stream May 11-May14th 2020 which you can check out [here](https://www.twitch.tv/jacobneterer).
+Keep reading for more information about how to get the best out of this awesome theme! Almost all development was done live on my Twitch stream May 11th-May 14th 2020 which you can check out [here](https://www.twitch.tv/jacobneterer).
 
 ## 🚀 Quick start
 These instructions assume you already have a development environment set up with Angular already installed. If not, please follow their setup directions [here](https://angular.io/guide/setup-local).
@@ -34,7 +34,7 @@ The key file with all of your custom configuration for TailwindCSS can be found 
 * repeating linear gradient colors
 * repeating linear gradient lengths
 
-I also use a plugin to generate gradient styles called `tailwindcss-gradients`. It made generating these gradient styles so easy, check out their documentation: `https://www.npmjs.com/package/tailwindcss-gradients`.
+I also use a plugin to generate gradient styles called `tailwindcss-gradients`. It made generating these gradient styles so easy, check out their [documentation](https://www.npmjs.com/package/tailwindcss-gradients).
 
 This application also uses SCSS for styling. If you don't know about SCSS, go check out their [documentation](https://sass-lang.com/). It basically allows us to write CSS better.
 
@@ -42,11 +42,11 @@ If you open the `src/styles.scss` you can see we import the TailwindCSS base, co
 
 I chose to move all component style sheets to the `src/styles/components` directory because they need access to the TailwindCSS classes. If I left them in their own relative component directories, they would not have access. And since I define a lot of styles for elements that require a lot of TailwindCSS classes in `.scss` files rather than in the `.html`, I felt it was best to go ahead and just add them all the the components directory.
 
-Additionally, you will find a lot of settings for the app in self-explanatory files under the settings directory.
+Additionally, you will find a lot of settings for the app in files under the settings directory.
 
-* elements.scss - styling for global elements
-* forms.scss - styling for forms
-* mixins.scss - reusable styles known in the SCSS world as mixins
+* `elements.scss` - styling for global elements
+* `forms.scss` - styling for forms
+* `mixins.scss` - reusable styles known in the SCSS world as mixins
 
 ## Icons
 
@@ -89,15 +89,15 @@ Within the components directory I've defined two reusable components:
 
 ### `/services`
 
-Here you can find reusable services for the application. I would only put service code here that you don't mind being exposed to anonymous users. I would not put any business logic here. You should create a separate services directory in the private directory so it is lazy loaded.
+Here you can find reusable services for the application. I would only put service code here that you don't mind it being exposed to anonymous users. I would not put any business logic here. You should create a separate services directory in the private directory so it is lazy loaded.
 
-* `content.service.ts` - contains any content-based data. I use it to store an observable that has the value of the current and previous url. We use that data to show a navigation button as active or inactive if the user is on its page.
+* `content.service.ts` - contains any content-based data. I use it to store an observable that has the value of the current and previous url. We use that data to show a navigation button as active or inactive if the user is on it's page.
 
 ### `/templates`
 
 Templates contains any component extensions you want to add. In this case I create one for forms. Unlike Angular-based styling frameworks like Angular Material, TailwindCSS cannot automatically detect form errors and show them. I found that I was rewriting this code in each component that had a form, so I created this extension.
 
-If you want to use this extension, simply write `extends FormTemplate` in your component class and call `super` in it's constructor. In the template you will find default error messages. You can override these with your own in the component that implements this template. If you have other error handling, you can add messages for those and add validation for that in the `getErrorMessage` function.
+If you want to use this extension, simply write `extends FormTemplate` in your component class and call `super()` in it's constructor. In the template you will find default error messages. You can override these with your own in the component that implements this template. If you have other errors you want to handle, you can add messages for those and add validation in the `getErrorMessage` function.
 
 ### `/validators`
 
@@ -105,7 +105,7 @@ Here lives any custom form validators. In it I've created a `must-match` form fi
 
 ### `/shared.module.ts`
 
-Lastly, in this module I have imported and exported any modules that might be required throughout the application. Rather than having to import, say, `FormsModule` and `ReactiveFormsModule` in each module that requires forms, I simply import and export them here and import only `SharedModule` wherever they're needed.
+Lastly, in this module I have imported and exported any modules that might be required throughout the application. For example: rather than having to import `FormsModule` and `ReactiveFormsModule` in each module that requires forms, I simply import and export them here and import only `SharedModule` wherever they're needed.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.4.
 
