@@ -6,6 +6,10 @@ Start building an authentication-based application with this **Open Source** Ang
 
 Keep reading for more information about how to get the best out of this awesome theme! Almost all development was done live on my Twitch stream May 11th-May 14th 2020 which you can check out [here](https://www.twitch.tv/jacobneterer).
 
+View this starter live [here]()! This is not hooked up to an authentication service, so type in anything into the username and password field to "log in"! 😀
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/365f6427-3103-4cdb-bd9a-24984a0f075e/deploy-status)](https://app.netlify.com/sites/angular-tailwindcss-auth-theme/deploys)
+
 ## 🚀 Quick start
 These instructions assume you already have a development environment set up with Angular already installed. If not, please follow their setup directions [here](https://angular.io/guide/setup-local).
 
