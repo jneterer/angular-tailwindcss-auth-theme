@@ -1,0 +1,7 @@
+<div class="menu-container right-0 md:right-{{right}} origin-top md:origin-{{origin}}" [ngClass]="{'open': expanded}">
+  <ul>
+    <li *ngFor="let menuItem of menuItems">
+      <a class="menu-item" [routerLink]="menuItem.url" (click)="collapseMenu.emit()">{{ menuItem.label }}</a>
+    </li>
+  </ul>
+</div>

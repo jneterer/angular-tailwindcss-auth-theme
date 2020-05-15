@@ -1,34 +1,31 @@
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { AngularSvgIconModule } from 'angular-svg-icon';
 import { LinkComponent } from './components/link/link.component';
-import { ViewHideComponent } from './icons/view-hide/view-hide.component';
-import { ViewShowComponent } from './icons/view-show/view-show.component';
+import { ZondIconComponent } from './components/zond-icon/zond-icon.component';
 
 @NgModule({
   declarations: [
     LinkComponent,
-    ViewHideComponent,
-    ViewShowComponent
+    ZondIconComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
-  ],
-  entryComponents: [
-    ViewHideComponent,
-    ViewShowComponent
+    ReactiveFormsModule,
+    HttpClientModule,
+    AngularSvgIconModule.forRoot()
   ],
   exports: [
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
     LinkComponent,
-    ViewHideComponent,
-    ViewShowComponent
+    ZondIconComponent
   ]
 })
 export class SharedModule { }

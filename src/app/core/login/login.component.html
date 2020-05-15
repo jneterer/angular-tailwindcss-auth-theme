@@ -11,7 +11,9 @@
       <div class="input-wrapper">
         <input id="username" formControlName="username" type="text" placeholder="Username" required>
       </div>
-      <p class="error" [class.active]="errorIsActive(loginForm.get('username'))">This field is required.</p>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('username'))">
+        {{ getErrorMessage(loginForm.get('username')) }}
+      </p>
     </div>
     <div class="mb-10">
       <label for="password">
@@ -20,15 +22,13 @@
       <div class="input-wrapper flex">
         <input id="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="******************" required>
         <div class="cursor-pointer" (click)="showPassword = !showPassword">
-          <ng-container *ngIf="showPassword; else hidePassword">
-            <app-view-hide></app-view-hide>
-          </ng-container>
-          <ng-template #hidePassword>
-            <app-view-show></app-view-show>
-          </ng-template>
+          <span [class.hidden]="!showPassword"><zond-icon icon="view-hide"></zond-icon></span>
+          <span [class.hidden]="showPassword"><zond-icon icon="view-show"></zond-icon></span>
         </div>
       </div>
-      <p class="error" [class.active]="errorIsActive(loginForm.get('password'))">This field is required.</p>
+      <p class="error" [class.active]="errorIsActive(loginForm.get('password'))">
+        {{ getErrorMessage(loginForm.get('password')) }}
+      </p>
     </div>
     <div class="mb-6">
       <app-link [text]="'Forgot Password?'" [url]="'/forgot-password'"></app-link>

@@ -1,0 +1,10 @@
+svg {
+  height: 25px;
+  width: 25px;
+  &.default {
+    fill: theme('colors.blue.900');
+  }
+  &.white {
+    fill: theme('colors.white');
+  }
+}

@@ -1,9 +1,12 @@
 @import './core/create-account.scss';
 @import './core/forgot-password.scss';
 @import './core/login.scss';
-@import './profile/account-info.scss';
-@import './profile/change-password.scss';
-@import './profile/profile.scss';
+@import './private/header/header.scss';
+@import './private/header/menu.scss';
+@import './private/profile/account-info.scss';
+@import './private/profile/change-password.scss';
+@import './private/profile/profile.scss';
 @import './shared/auth.scss';
 @import './shared/link.scss';
+@import './shared/zond-icon.scss';
 @import './app.scss';

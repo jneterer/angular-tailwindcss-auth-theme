@@ -16,28 +16,6 @@ label {
     @apply bg-gray-100;
   }
 }
-.btn {
-  @include shadowOnFocus();
-  @apply px-4;
-  @apply py-2;
-  @apply rounded;
-  @apply text-white;
-  @apply transition;
-  @apply ease-in-out;
-  @apply duration-200;
-  &:disabled {
-    opacity: .5;
-  }
-  &:hover:enabled {
-    @apply shadow-xl
-  }
-  &.gradient {
-    @apply bg-gradient-r-primary-gradient;
-  }
-  &.striped {
-    @apply bg-gradient-n45-primary-striped-sm;
-  }
-}
 .error {
   @apply mt-1;
   color: theme('colors.primary');

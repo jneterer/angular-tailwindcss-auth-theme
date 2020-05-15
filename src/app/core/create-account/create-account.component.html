@@ -49,12 +49,8 @@
       <div class="input-wrapper flex">
         <input id="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="Password" required>
         <div class="cursor-pointer" (click)="showPassword = !showPassword">
-          <ng-container *ngIf="showPassword; else hidePassword">
-            <app-view-hide></app-view-hide>
-          </ng-container>
-          <ng-template #hidePassword>
-            <app-view-show></app-view-show>
-          </ng-template>
+          <span [class.hidden]="!showPassword"><zond-icon icon="view-hide"></zond-icon></span>
+          <span [class.hidden]="showPassword"><zond-icon icon="view-show"></zond-icon></span>
         </div>
       </div>
       <p class="error" [class.active]="errorIsActive(createAccountForm.get('password'))">
