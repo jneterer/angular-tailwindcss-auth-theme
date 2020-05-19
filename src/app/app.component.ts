@@ -16,8 +16,7 @@ export class AppComponent implements OnInit {
               private contentService: ContentService) { }
 
   ngOnInit(): void {
-    this.router.events.
-    pipe(
+    this.router.events.pipe(
       filter(event => (event instanceof NavigationStart || event instanceof NavigationEnd))
     )
     .subscribe((event: NavigationEnd) => {
